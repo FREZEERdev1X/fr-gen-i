@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FREZEER i GEN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fall {
+        0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(105vh) rotate(720deg); opacity: 1; }
+      }
+      @keyframes sway-1 {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(25px); }
+      }
+      @keyframes sway-2 {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-25px); }
+      }
+      .animate-fall-slow { animation: fall 25s linear infinite; }
+      .animate-fall-medium { animation: fall 18s linear infinite; }
+      .animate-fall-fast { animation: fall 12s linear infinite; }
+      .animate-sway-1 { animation: sway-1 5s ease-in-out infinite; }
+      .animate-sway-2 { animation: sway-2 4s ease-in-out infinite; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 dark:bg-slate-900 transition-colors duration-500">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
